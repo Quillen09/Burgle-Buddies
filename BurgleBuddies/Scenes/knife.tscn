@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bawitcnxmknmx"]
+
+[ext_resource type="Texture2D" uid="uid://bldobpsikgmda" path="res://Scenes/1740679987064.png" id="1_vonna"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_viqfj"]
+size = Vector2(34, 8)
+
+[node name="Knife" type="RigidBody2D"]
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.999996, -4)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_vonna")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_viqfj")
+disabled = true

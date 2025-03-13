@@ -26,3 +26,7 @@ func _physics_process(_delta):
 	position.y = clamp(position.y, -1098, 266)
 		
 	move_and_slide()
+
+enum States {EMPTY, KNIFE}
+
+var state: States = States.EMPTY
