@@ -1,12 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://bawitcnxmknmx"]
+[gd_scene load_steps=6 format=3 uid="uid://bawitcnxmknmx"]
 
 [ext_resource type="Texture2D" uid="uid://bldobpsikgmda" path="res://Scenes/1740679987064.png" id="1_vonna"]
+[ext_resource type="Script" path="res://Scenes/knife.gd" id="1_yhxuv"]
+[ext_resource type="PackedScene" uid="uid://46g7g0whxhye" path="res://Interaction_Components/interactable.tscn" id="2_kpy3b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_viqfj"]
 size = Vector2(34, 8)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_odrxt"]
+
 [node name="Knife" type="RigidBody2D"]
 gravity_scale = 0.0
+script = ExtResource("1_yhxuv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-0.999996, -4)
@@ -17,3 +22,11 @@ texture = ExtResource("1_vonna")
 position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_viqfj")
 disabled = true
+
+[node name="Interactable" parent="." instance=ExtResource("2_kpy3b")]
+interact_name = "Pick up knife"
+is_interactable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+scale = Vector2(2.30294, 2.00014)
+shape = SubResource("CircleShape2D_odrxt")

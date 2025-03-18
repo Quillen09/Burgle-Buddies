@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnk51647w7i0d"]
+[gd_scene load_steps=5 format=3 uid="uid://cnk51647w7i0d"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_4mejw"]
 [ext_resource type="Texture2D" uid="uid://c2lmjh3lvbehf" path="res://Scenes/1740675762512.png" id="2_8wodu"]
+[ext_resource type="PackedScene" uid="uid://bgjqhailffipa" path="res://Interaction_Components/interacting_component.tscn" id="3_452lh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0bsv"]
 size = Vector2(38, 99)
@@ -19,3 +20,7 @@ texture = ExtResource("2_8wodu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12.5)
 shape = SubResource("RectangleShape2D_f0bsv")
+
+[node name="InteractingComponent" parent="." instance=ExtResource("3_452lh")]
+position = Vector2(0, 12)
+scale = Vector2(5.03645, 6.01708)
