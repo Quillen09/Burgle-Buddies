@@ -13,13 +13,13 @@ var direction : Vector2 = Vector2()
 func _physics_process(_delta):
 	#read_input()
 	
-	if Input.is_action_just_pressed("right"):
+	if Input.is_action_just_pressed("res_right"):
 		position.x += move_distance
-	if Input.is_action_just_pressed("left"):
+	if Input.is_action_just_pressed("res_left"):
 		position.x -= move_distance
-	if Input.is_action_just_pressed("up"):
+	if Input.is_action_just_pressed("res_up"):
 		position.y -= move_distance
-	if Input.is_action_just_pressed("down"):
+	if Input.is_action_just_pressed("res_down"):
 		position.y += move_distance
 		
 	position.x = clamp(position.x, -430, 2414)

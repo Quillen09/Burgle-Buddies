@@ -1,12 +1,13 @@
-[gd_scene load_steps=14 format=4 uid="uid://0rtqamf1k7au"]
+[gd_scene load_steps=15 format=4 uid="uid://0rtqamf1k7au"]
 
 [ext_resource type="Texture2D" uid="uid://dswgk0fopp5l3" path="res://Assets/Inside_A2_supplement.png" id="1_7fsum"]
-[ext_resource type="PackedScene" uid="uid://cnk51647w7i0d" path="res://Scenes/player.tscn" id="2_dbokc"]
+[ext_resource type="PackedScene" uid="uid://cnk51647w7i0d" path="res://Scenes/resident.tscn" id="2_dbokc"]
 [ext_resource type="Texture2D" uid="uid://diru2ie6canrn" path="res://Assets/Walls.png" id="2_pe820"]
 [ext_resource type="Texture2D" uid="uid://bnh570w5cj4y6" path="res://Assets/Floor_1_32x32.png" id="3_o4oay"]
 [ext_resource type="Texture2D" uid="uid://b1wcb8gumhg12" path="res://Assets/Floor_3_32x32.png" id="4_c4vwr"]
 [ext_resource type="Texture2D" uid="uid://dvo03l31wj2bx" path="res://Assets/strokespritesheet20123.png" id="5_y1g2e"]
 [ext_resource type="PackedScene" uid="uid://bawitcnxmknmx" path="res://Scenes/knife.tscn" id="7_1y11f"]
+[ext_resource type="PackedScene" uid="uid://ynyrm0l786is" path="res://Scenes/burglar.tscn" id="8_2um7u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6vhfd"]
 texture = ExtResource("1_7fsum")
@@ -1203,14 +1204,11 @@ tile_map_data = PackedByteArray("AAAJAPn/AAACAAgAAAD/////BAASAAoAAAAAAP//BAASAAo
 tile_set = SubResource("TileSet_sjsxd")
 use_kinematic_bodies = true
 
-[node name="Player" parent="." instance=ExtResource("2_dbokc")]
+[node name="Resident" parent="." instance=ExtResource("2_dbokc")]
 position = Vector2(-128, -72)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-limit_left = -480
-limit_top = -1248
-limit_right = 2464
-limit_bottom = 416
 
 [node name="Knife" parent="." instance=ExtResource("7_1y11f")]
 position = Vector2(75, -82)
+
+[node name="Burglar" parent="." instance=ExtResource("8_2um7u")]
+position = Vector2(1609, -889)
