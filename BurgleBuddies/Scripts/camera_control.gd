@@ -2,7 +2,9 @@ extends Node
 
 @onready var items = []
 @onready var resident_hud: CanvasLayer = $HBoxContainer/SubViewportContainer/SubViewport/ResidentHud
+@onready var burglar_hud: CanvasLayer = $HBoxContainer/SubViewportContainer2/SubViewport/BurglarHud
 
+	
 @onready var players := {
 	"1": {
 		viewport = $"HBoxContainer/SubViewportContainer/SubViewport",
@@ -25,14 +27,19 @@ func _ready() -> void:
 		remote_transform.remote_path = node.camera.get_path()
 		node.player.add_child(remote_transform)
 	
+	var burgWeaponIcon = burglar_hud.find_child("Weapon")
+	var burgWeaponName = burglar_hud.find_child("WeaponName")
+	burgWeaponIcon.texture = load("res://Assets/1740679987064.png")
+	burgWeaponName.text = "Knife"
+	
 		
 func get_Weapon():
 	#append item to array
 	items.append("knife")
 	#update UI
-	var weaponIcon = resident_hud.find_child("Weapon")
-	var weaponName = resident_hud.find_child("WeaponName")
-	weaponIcon.texture = load("res://Assets/1740679987064.png")
-	weaponName.text = "Knife"
+	var resWeaponIcon = resident_hud.find_child("Weapon")
+	var resWeaponName = resident_hud.find_child("WeaponName")
+	resWeaponIcon.texture = load("res://Assets/1740679987064.png")
+	resWeaponName.text = "Knife"
 	#hud_control.onItemPickUp
 	print(items)

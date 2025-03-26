@@ -39,4 +39,4 @@ render_target_update_mode = 4
 
 [node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer2/SubViewport"]
 
-[node name="BurlgarHud" parent="HBoxContainer/SubViewportContainer2/SubViewport" instance=ExtResource("3_r34hy")]
+[node name="BurglarHud" parent="HBoxContainer/SubViewportContainer2/SubViewport" instance=ExtResource("3_r34hy")]
