@@ -1,0 +1,93 @@
+[gd_scene load_steps=3 format=3 uid="uid://bd1fl2npkt4rd"]
+
+[ext_resource type="Texture2D" uid="uid://bdm6rjgog5di3" path="res://icon.svg" id="1_ig3br"]
+
+[sub_resource type="GDScript" id="GDScript_1qg5y"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+
+func onWeaponPickUp():
+	print(\"hud display\")
+"
+
+[node name="PlayerHud" type="CanvasLayer"]
+script = SubResource("GDScript_1qg5y")
+
+[node name="HudControl" type="Control" parent="."]
+unique_name_in_owner = true
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="HudControl"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HudControl"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -130.0
+offset_right = 130.0
+grow_vertical = 0
+
+[node name="Health" type="Label" parent="HudControl/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Health
+"
+horizontal_alignment = 1
+
+[node name="InventoryContainer" type="HBoxContainer" parent="HudControl/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ItemContainer" type="VBoxContainer" parent="HudControl/VBoxContainer/InventoryContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="HudControl/VBoxContainer/InventoryContainer/ItemContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Item" type="TextureRect" parent="HudControl/VBoxContainer/InventoryContainer/ItemContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_ig3br")
+expand_mode = 5
+
+[node name="ItemName" type="Label" parent="HudControl/VBoxContainer/InventoryContainer/ItemContainer"]
+layout_mode = 2
+text = "Item"
+horizontal_alignment = 1
+
+[node name="WeaponContainer" type="VBoxContainer" parent="HudControl/VBoxContainer/InventoryContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="HudControl/VBoxContainer/InventoryContainer/WeaponContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Weapon" type="TextureRect" parent="HudControl/VBoxContainer/InventoryContainer/WeaponContainer/MarginContainer" groups=["HudIcons"]]
+layout_mode = 2
+expand_mode = 5
+stretch_mode = 5
+
+[node name="WeaponName" type="Label" parent="HudControl/VBoxContainer/InventoryContainer/WeaponContainer"]
+layout_mode = 2
+text = "Weapon"
+horizontal_alignment = 1

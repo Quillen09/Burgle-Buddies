@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @export var speed = 400
 @export var move_distance := 50
+@onready var itemHeld = "";
+@onready var weaponHeld = "Knife";
 
 var direction : Vector2 = Vector2()
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bawitcnxmknmx"]
 
-[ext_resource type="Texture2D" uid="uid://bldobpsikgmda" path="res://Scenes/1740679987064.png" id="1_vonna"]
+[ext_resource type="Texture2D" uid="uid://bldobpsikgmda" path="res://Assets/1740679987064.png" id="1_vonna"]
 [ext_resource type="Script" path="res://Scripts/knife.gd" id="1_yhxuv"]
 [ext_resource type="PackedScene" uid="uid://46g7g0whxhye" path="res://Interaction_Components/interactable.tscn" id="2_kpy3b"]
 

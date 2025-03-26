@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ynyrm0l786is"]
+[gd_scene load_steps=4 format=3 uid="uid://cyexapy6fdfus"]
 
 [ext_resource type="Script" path="res://Scripts/burglar.gd" id="1_u1y21"]
-[ext_resource type="Texture2D" uid="uid://cxij2kpxb7xx5" path="res://Scenes/1740675768571.png" id="2_ur554"]
+[ext_resource type="Texture2D" uid="uid://cxij2kpxb7xx5" path="res://Assets/1740675768571.png" id="2_ur554"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3rbjr"]
 size = Vector2(38, 99)
