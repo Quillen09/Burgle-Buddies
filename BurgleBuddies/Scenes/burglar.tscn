@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ynyrm0l786is"]
+[gd_scene load_steps=5 format=3 uid="uid://ynyrm0l786is"]
 
 [ext_resource type="Script" path="res://Scripts/burglar.gd" id="1_u1y21"]
 [ext_resource type="Texture2D" uid="uid://cxij2kpxb7xx5" path="res://Assets/1740675768571.png" id="2_ur554"]
+[ext_resource type="PackedScene" uid="uid://bgjqhailffipa" path="res://Interaction_Components/interacting_component.tscn" id="3_0tajs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3rbjr"]
 size = Vector2(38, 99)
@@ -21,3 +22,7 @@ texture = ExtResource("2_ur554")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 23)
 shape = SubResource("RectangleShape2D_3rbjr")
+
+[node name="InteractingComponent" parent="." instance=ExtResource("3_0tajs")]
+position = Vector2(0, 24)
+scale = Vector2(5.32515, 5.91123)
