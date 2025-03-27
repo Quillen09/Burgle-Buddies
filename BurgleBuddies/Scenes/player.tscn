@@ -1,8 +1,42 @@
-[gd_scene load_steps=5 format=3 uid="uid://q8aoberbh305"]
+[gd_scene load_steps=5 format=3 uid="uid://b3tc124hoy4gw"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_4mejw"]
 [ext_resource type="Texture2D" uid="uid://c2lmjh3lvbehf" path="res://Assets/1740675762512.png" id="2_8wodu"]
 [ext_resource type="PackedScene" uid="uid://bgjqhailffipa" path="res://Interaction_Components/interacting_component.tscn" id="3_452lh"]
+
+[sub_resource type="GDScript" id="GDScript_nfr14"]
+script/source = "extends CharacterBody2D
+
+@export var speed = 400
+@export var move_distance := 50
+
+var direction : Vector2 = Vector2()
+#var charVelocity : Vector2 = Vector2()
+
+#func read_input():
+	#var input_direction = Input.get_vector(\"left\", \"right\", \"up\", \"down\")
+	#velocity = input_direction * speed
+		
+func _physics_process(_delta):
+	#read_input()
+	
+	if Input.is_action_just_pressed(\"right\"):
+		position.x += move_distance
+	if Input.is_action_just_pressed(\"left\"):
+		position.x -= move_distance
+	if Input.is_action_just_pressed(\"up\"):
+		position.y -= move_distance
+	if Input.is_action_just_pressed(\"down\"):
+		position.y += move_distance
+		
+	position.x = clamp(position.x, -430, 2414)
+	position.y = clamp(position.y, -1098, 266)
+		
+	move_and_slide()
+
+enum States {EMPTY, KNIFE}
+
+var state: States = States.EMPTY
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0bsv"]
 size = Vector2(38, 99)
@@ -10,7 +44,7 @@ size = Vector2(38, 99)
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(0, -31)
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_4mejw")
+script = SubResource("GDScript_nfr14")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 1)
