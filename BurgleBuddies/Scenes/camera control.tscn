@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/camera_control.gd" id="1_1ul02"]
 [ext_resource type="PackedScene" uid="uid://0rtqamf1k7au" path="res://Scenes/main.tscn" id="2_v375j"]
-[ext_resource type="PackedScene" uid="uid://bd1fl2npkt4rd" path="res://Scenes/player_hud.tscn" id="3_r34hy"]
+[ext_resource type="PackedScene" uid="uid://c4ifa2t4bdsi3" path="res://Scenes/player_hud.tscn" id="3_r34hy"]
 
 [node name="CameraControl" type="Node"]
 script = ExtResource("1_1ul02")
@@ -26,6 +26,10 @@ render_target_update_mode = 4
 [node name="Node2D" parent="HBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("2_v375j")]
 
 [node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer/SubViewport"]
+limit_left = -1440
+limit_top = -2208
+limit_right = 3424
+limit_bottom = 1376
 
 [node name="ResidentHud" parent="HBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("3_r34hy")]
 
@@ -38,5 +42,9 @@ size = Vector2i(576, 648)
 render_target_update_mode = 4
 
 [node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer2/SubViewport"]
+limit_left = -1440
+limit_top = -2208
+limit_right = 3424
+limit_bottom = 1376
 
 [node name="BurglarHud" parent="HBoxContainer/SubViewportContainer2/SubViewport" instance=ExtResource("3_r34hy")]

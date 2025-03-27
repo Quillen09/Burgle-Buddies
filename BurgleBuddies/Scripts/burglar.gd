@@ -17,7 +17,7 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("burg_down"):
 		position.y += move_distance
 		
-	position.x = clamp(position.x, -430, 2414)
-	position.y = clamp(position.y, -1098, 266)
+	position.x = clamp(position.x, -1490, 3374)
+	position.y = clamp(position.y, -2258, 1326)
 		
 	move_and_slide()
