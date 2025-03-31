@@ -1,6 +1,5 @@
 extends Node
 
-@onready var items = []
 @onready var resident_hud: CanvasLayer = $HBoxContainer/SubViewportContainer/SubViewport/ResidentHud
 @onready var burglar_hud: CanvasLayer = $HBoxContainer/SubViewportContainer2/SubViewport/BurglarHud
 
@@ -34,12 +33,20 @@ func _ready() -> void:
 	
 		
 func get_Weapon():
-	#append item to array
-	items.append("knife")
 	#update UI
 	var resWeaponIcon = resident_hud.find_child("Weapon")
 	var resWeaponName = resident_hud.find_child("WeaponName")
 	resWeaponIcon.texture = load("res://Assets/1740679987064.png")
 	resWeaponName.text = "Knife"
-	#hud_control.onItemPickUp
-	print(items)
+
+func get_Item():
+	#update UI
+	var burgWeaponIcon = burglar_hud.find_child("Item")
+	var burgWeaponName = burglar_hud.find_child("ItemName")
+	burgWeaponIcon.texture = load("res://icon.svg")
+	burgWeaponName.text = "Key"
+
+func open_Safe():
+	var burgWeaponName = burglar_hud.find_child("ItemName")
+	if burgWeaponName.text == "key":
+		print("yo");

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://0rtqamf1k7au"]
+[gd_scene load_steps=21 format=4 uid="uid://0rtqamf1k7au"]
 
 [ext_resource type="Texture2D" uid="uid://dswgk0fopp5l3" path="res://Assets/Inside_A2_supplement.png" id="1_7fsum"]
 [ext_resource type="PackedScene" uid="uid://cnk51647w7i0d" path="res://Scenes/resident.tscn" id="2_dbokc"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://dvo03l31wj2bx" path="res://Assets/strokespritesheet20123.png" id="5_y1g2e"]
 [ext_resource type="PackedScene" uid="uid://bawitcnxmknmx" path="res://Scenes/knife.tscn" id="7_1y11f"]
 [ext_resource type="PackedScene" uid="uid://ynyrm0l786is" path="res://Scenes/burglar.tscn" id="8_2um7u"]
+[ext_resource type="PackedScene" uid="uid://n7tj51wvpkrj" path="res://Scenes/key.tscn" id="10_4fgda"]
+[ext_resource type="PackedScene" uid="uid://cg3yv6answx6m" path="res://Scenes/safe.tscn" id="11_li1gl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6vhfd"]
 texture = ExtResource("1_7fsum")
@@ -1508,3 +1510,9 @@ position = Vector2(75, -82)
 position = Vector2(1609, -889)
 collision_layer = 2
 collision_mask = 1
+
+[node name="Key" parent="." instance=ExtResource("10_4fgda")]
+position = Vector2(1598, -183)
+
+[node name="Safe" parent="." instance=ExtResource("11_li1gl")]
+position = Vector2(503, -1087)

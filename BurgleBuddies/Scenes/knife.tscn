@@ -24,7 +24,7 @@ shape = SubResource("RectangleShape2D_viqfj")
 disabled = true
 
 [node name="Interactable" parent="." instance=ExtResource("2_kpy3b")]
-interact_name = "Pick up knife"
+interact_name = "Pick up knife 'E'"
 is_interactable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]

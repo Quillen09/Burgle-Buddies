@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cg3yv6answx6m"]
+
+[ext_resource type="Script" path="res://Scripts/safe.gd" id="1_bcf1n"]
+[ext_resource type="Texture2D" uid="uid://yf8iv7khfluq" path="res://Assets/mushroom.png" id="2_j2qa8"]
+[ext_resource type="PackedScene" uid="uid://46g7g0whxhye" path="res://Interaction_Components/interactable.tscn" id="3_kmrp1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_viqfj"]
+size = Vector2(26, 24)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_odrxt"]
+radius = 9.56608
+
+[node name="Safe" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_bcf1n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, 0)
+scale = Vector2(0.8125, 0.75)
+texture = ExtResource("2_j2qa8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_viqfj")
+disabled = true
+
+[node name="Interactable" parent="." instance=ExtResource("3_kmrp1")]
+interact_name = "Pick up key 'M'"
+is_interactable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+scale = Vector2(2.30294, 2.00014)
+shape = SubResource("CircleShape2D_odrxt")
