@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5kmhl5bo1od6"
-path="res://.godot/imported/Pixilart App (1).png-c392786899b995c74b50bc2d0fc3c945.ctex"
+uid="uid://bj32itenfxyww"
+path="res://.godot/imported/Slash2_color1_frame4.png-ae9b0e34f9114c1353c7e293fa30ab6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixilart App (1).png"
-dest_files=["res://.godot/imported/Pixilart App (1).png-c392786899b995c74b50bc2d0fc3c945.ctex"]
+source_file="res://Slash 2/color1/Frames/Slash2_color1_frame4.png"
+dest_files=["res://.godot/imported/Slash2_color1_frame4.png-ae9b0e34f9114c1353c7e293fa30ab6f.ctex"]
 
 [params]
 

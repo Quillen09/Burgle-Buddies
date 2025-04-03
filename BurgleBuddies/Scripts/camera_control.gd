@@ -46,7 +46,7 @@ func get_Item():
 	#update UI
 	var burgWeaponIcon = burglar_hud.find_child("Item")
 	var burgWeaponName = burglar_hud.find_child("ItemName")
-	burgWeaponIcon.texture = load("res://icon.svg")
+	burgWeaponIcon.texture = load("res://Assets/key.png")
 	burgWeaponName.text = "Key"
 
 func open_Safe():
@@ -56,7 +56,7 @@ func open_Safe():
 	
 	if safeCheck == true:
 		burgWeaponIcon.texture = load("res://Assets/mushroom.png")
-		burgWeaponName.text = "Jewels"
+		burgWeaponName.text = "Money"
 	else:
 		print("Missing key")
 	

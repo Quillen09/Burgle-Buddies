@@ -1,23 +1,23 @@
 [gd_scene load_steps=6 format=3 uid="uid://n7tj51wvpkrj"]
 
 [ext_resource type="Script" path="res://Scripts/key.gd" id="1_am3nq"]
-[ext_resource type="Texture2D" uid="uid://b5kmhl5bo1od6" path="res://Pixilart App (1).png" id="2_76yg6"]
+[ext_resource type="Texture2D" uid="uid://b5kmhl5bo1od6" path="res://Assets/key.png" id="2_8xybg"]
 [ext_resource type="PackedScene" uid="uid://46g7g0whxhye" path="res://Interaction_Components/interactable.tscn" id="3_ylj25"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_viqfj"]
-size = Vector2(73, 32)
+size = Vector2(26, 24)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_odrxt"]
-radius = 20.8968
+radius = 23.6394
 
 [node name="Key" type="RigidBody2D"]
 gravity_scale = 0.0
 script = ExtResource("1_am3nq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -5)
-scale = Vector2(0.06, 0.06)
-texture = ExtResource("2_76yg6")
+position = Vector2(0, 4.76837e-07)
+scale = Vector2(0.06, 0.058)
+texture = ExtResource("2_8xybg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_viqfj")
