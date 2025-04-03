@@ -1,16 +1,89 @@
-[gd_scene load_steps=5 format=3 uid="uid://ynyrm0l786is"]
+[gd_scene load_steps=18 format=3 uid="uid://ynyrm0l786is"]
 
 [ext_resource type="Script" path="res://Scripts/burglar.gd" id="1_u1y21"]
 [ext_resource type="Texture2D" uid="uid://cxij2kpxb7xx5" path="res://Assets/1740675768571.png" id="2_ur554"]
 [ext_resource type="PackedScene" uid="uid://bgjqhailffipa" path="res://Interaction_Components/interacting_component.tscn" id="3_0tajs"]
+[ext_resource type="Texture2D" uid="uid://djubuockdiqph" path="res://Slash 3/color2/frames/Slash3_color2_frame1.png" id="4_ub4wj"]
+[ext_resource type="Texture2D" uid="uid://dfpf1h8hss1bm" path="res://Slash 3/color2/frames/Slash3_color2_frame2.png" id="5_jmuv6"]
+[ext_resource type="Texture2D" uid="uid://cfgvvkmij4kc0" path="res://Slash 3/color2/frames/Slash3_color2_frame3.png" id="6_aeu0a"]
+[ext_resource type="Texture2D" uid="uid://cgy5b1h7wm7m6" path="res://Slash 3/color2/frames/Slash3_color2_frame4.png" id="7_nny2g"]
+[ext_resource type="Texture2D" uid="uid://mqkyp1kwxpxk" path="res://Slash 3/color2/frames/Slash3_color2_frame5.png" id="8_uv55u"]
+[ext_resource type="Texture2D" uid="uid://mkuco6ouqx1l" path="res://Slash 3/color2/frames/Slash3_color2_frame6.png" id="9_n0lcl"]
+[ext_resource type="Texture2D" uid="uid://u4h8cvwlwy10" path="res://Slash 3/color2/frames/Slash3_color2_frame7.png" id="10_hk7fx"]
+[ext_resource type="Texture2D" uid="uid://cphw68g42h18g" path="res://Slash 3/color2/frames/Slash3_color2_frame8.png" id="11_h5ut7"]
+[ext_resource type="Texture2D" uid="uid://cjpoqbvyx57ro" path="res://Slash 3/color2/frames/Slash3_color2_frame9.png" id="12_5fl07"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3rbjr"]
 size = Vector2(38, 99)
+
+[sub_resource type="Animation" id="Animation_tsec3"]
+resource_name = "attackburg"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0001, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_ub4wj"), ExtResource("5_jmuv6"), ExtResource("6_aeu0a"), ExtResource("7_nny2g"), ExtResource("8_uv55u"), ExtResource("9_n0lcl"), ExtResource("10_hk7fx"), ExtResource("11_h5ut7"), ExtResource("12_5fl07")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:attacking")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.266667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_83goj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:attacking")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y8hop"]
+_data = {
+"RESET": SubResource("Animation_83goj"),
+"attackburg": SubResource("Animation_tsec3")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3t7md"]
+radius = 78.0256
 
 [node name="Burglar" type="CharacterBody2D"]
 position = Vector2(0, -37)
 scale = Vector2(0.5, 0.5)
 collision_mask = 2
+motion_mode = 1
 up_direction = Vector2(0, 1)
 script = ExtResource("1_u1y21")
 speed = 500
@@ -27,3 +100,18 @@ shape = SubResource("RectangleShape2D_3rbjr")
 [node name="InteractingComponent" parent="." instance=ExtResource("3_0tajs")]
 position = Vector2(0, 24)
 scale = Vector2(5.32515, 5.91123)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_y8hop")
+}
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(76, 24)
+scale = Vector2(1.5, 1.5)
+
+[node name="attackArea" type="Area2D" parent="."]
+position = Vector2(76, 22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attackArea"]
+shape = SubResource("CircleShape2D_3t7md")

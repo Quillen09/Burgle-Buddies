@@ -1,16 +1,89 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnk51647w7i0d"]
+[gd_scene load_steps=18 format=3 uid="uid://cnk51647w7i0d"]
 
 [ext_resource type="Script" path="res://Scripts/resident.gd" id="1_4mejw"]
 [ext_resource type="Texture2D" uid="uid://c2lmjh3lvbehf" path="res://Assets/1740675762512.png" id="2_8wodu"]
 [ext_resource type="PackedScene" uid="uid://bgjqhailffipa" path="res://Interaction_Components/interacting_component.tscn" id="3_452lh"]
+[ext_resource type="Texture2D" uid="uid://wdbm42lgl488" path="res://Slash 3/color5/frames/Slash3_color5_frame1.png" id="4_ffqj0"]
+[ext_resource type="Texture2D" uid="uid://dfdoslmtskkuh" path="res://Slash 3/color5/frames/Slash3_color5_frame2.png" id="5_b0xq0"]
+[ext_resource type="Texture2D" uid="uid://cbtnh2xpubcv" path="res://Slash 3/color5/frames/Slash3_color5_frame3.png" id="6_m0lyw"]
+[ext_resource type="Texture2D" uid="uid://dufvawtxk75g1" path="res://Slash 3/color5/frames/Slash3_color5_frame4.png" id="7_vlfhw"]
+[ext_resource type="Texture2D" uid="uid://ceb24hyaun2qk" path="res://Slash 3/color5/frames/Slash3_color5_frame5.png" id="8_fmfkr"]
+[ext_resource type="Texture2D" uid="uid://f5q5mhd1ggax" path="res://Slash 3/color5/frames/Slash3_color5_frame6.png" id="9_kea78"]
+[ext_resource type="Texture2D" uid="uid://dbqtm60ysginv" path="res://Slash 3/color5/frames/Slash3_color5_frame7.png" id="10_40qc0"]
+[ext_resource type="Texture2D" uid="uid://c0vqmdn5u21gi" path="res://Slash 3/color5/frames/Slash3_color5_frame8.png" id="11_gufxg"]
+[ext_resource type="Texture2D" uid="uid://dx30ddrbn3ch" path="res://Slash 3/color5/frames/Slash3_color5_frame9.png" id="12_oruf3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0bsv"]
 size = Vector2(38, 99)
+
+[sub_resource type="Animation" id="Animation_tpbnd"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.166767, 0.2, 0.233333, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_ffqj0"), ExtResource("5_b0xq0"), ExtResource("6_m0lyw"), ExtResource("7_vlfhw"), ExtResource("8_fmfkr"), ExtResource("9_kea78"), null, ExtResource("10_40qc0"), ExtResource("11_gufxg"), ExtResource("12_oruf3")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:attacking")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.266667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_6rjih"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:attacking")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6qxn8"]
+_data = {
+"RESET": SubResource("Animation_6rjih"),
+"attack": SubResource("Animation_tpbnd")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_my24w"]
+radius = 82.0975
 
 [node name="Resident" type="CharacterBody2D"]
 position = Vector2(0, -31)
 scale = Vector2(0.5, 0.5)
 collision_mask = 2
+motion_mode = 1
 script = ExtResource("1_4mejw")
 speed = 500
 
@@ -18,11 +91,29 @@ speed = 500
 position = Vector2(0, 1)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_8wodu")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12.5)
 shape = SubResource("RectangleShape2D_f0bsv")
+metadata/_edit_lock_ = true
 
 [node name="InteractingComponent" parent="." instance=ExtResource("3_452lh")]
 position = Vector2(0, 12)
 scale = Vector2(5.03645, 6.01708)
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6qxn8")
+}
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(72, 10)
+scale = Vector2(1.5, 1.5)
+
+[node name="attackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attackArea"]
+position = Vector2(106, 14)
+shape = SubResource("CircleShape2D_my24w")
