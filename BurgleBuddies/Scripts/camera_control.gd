@@ -2,7 +2,9 @@ extends Node
 
 @onready var resident_hud: CanvasLayer = $HBoxContainer/SubViewportContainer/SubViewport/ResidentHud
 @onready var burglar_hud: CanvasLayer = $HBoxContainer/SubViewportContainer2/SubViewport/BurglarHud
-@onready var safeCheck = open_Safe();
+@onready var safeCheck = open_Safe()
+@onready var burgWeaponCheck = set_Weapon_Status()
+@onready var resWeaponCheck = set_Weapon_Status()
 
 	
 @onready var players := {
@@ -60,8 +62,25 @@ func open_Safe():
 	
 		
 func safe_Status():
-	var burgWeaponName = burglar_hud.find_child("ItemName")
-	if burgWeaponName.text == "Key":
-		safeCheck = true;
+	var burgItemName = burglar_hud.find_child("ItemName")
+	if burgItemName.text == "Key":
+		safeCheck = true
 	else:
-		safeCheck = false;
+		safeCheck = false
+		
+func set_Weapon_Status():
+	weapon_Status()
+		
+func weapon_Status():
+	var burgWeaponName = burglar_hud.find_child("WeaponName")
+	var resWeaponName = resident_hud.find_child("WeaponName")
+	
+	if burgWeaponName.text == "Knife":
+		burgWeaponCheck = true
+	else:
+		burgWeaponCheck = false
+		
+	if resWeaponName.text == "Knife":
+		resWeaponCheck = true
+	else:
+		resWeaponCheck = false

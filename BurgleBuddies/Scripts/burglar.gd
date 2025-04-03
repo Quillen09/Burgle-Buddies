@@ -2,13 +2,16 @@ extends CharacterBody2D
 
 @export var speed = 300
 @export var move_distance := 50
-@onready var itemHeld = "";
-@onready var weaponHeld = "Knife";
 @export var attacking = false
 @onready var animation = $AnimationPlayer
+@onready var gameController = get_node("/root/CameraControl")
 
+signal has_Weapon
 
 var direction : Vector2 = Vector2()
+
+func _ready() -> void:
+	has_Weapon.connect(gameController.weapon_Status)
 
 func _physics_process(_delta):
 	velocity = velocity * .9 
@@ -31,12 +34,15 @@ func _physics_process(_delta):
 		attack()
 
 func attack():
-	var overlapping_object = $attackArea.get_overlapping_areas()
+	gameController.set_Weapon_Status()
+	if gameController.burgWeaponCheck == true:
+		has_Weapon.emit()
+		var overlapping_object = $attackArea.get_overlapping_areas()
 	
-	for area in overlapping_object:
-		var parent = area.get_parent()
-		print(parent)
-		parent.queue_free()
+		for area in overlapping_object:
+			var parent = area.get_parent()
+			print(parent)
+			parent.queue_free()
 	
-	attacking = true
-	animation.play("attackburg")
+		attacking = true
+		animation.play("attackburg")
