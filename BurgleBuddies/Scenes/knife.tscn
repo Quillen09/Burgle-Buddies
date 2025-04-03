@@ -5,21 +5,22 @@
 [ext_resource type="PackedScene" uid="uid://46g7g0whxhye" path="res://Interaction_Components/interactable.tscn" id="2_kpy3b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_viqfj"]
-size = Vector2(34, 8)
+size = Vector2(67, 11)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_odrxt"]
+radius = 16.5006
 
 [node name="Knife" type="RigidBody2D"]
 gravity_scale = 0.0
 script = ExtResource("1_yhxuv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-0.999996, -4)
-scale = Vector2(0.03, 0.03)
+position = Vector2(-1, -13)
+scale = Vector2(0.06, 0.06)
 texture = ExtResource("1_vonna")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 1)
+position = Vector2(2.5, -0.5)
 shape = SubResource("RectangleShape2D_viqfj")
 disabled = true
 

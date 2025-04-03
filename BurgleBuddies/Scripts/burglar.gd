@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 400
+@export var speed = 300
 @export var move_distance := 50
 @onready var itemHeld = "";
 @onready var weaponHeld = "Knife";
@@ -8,16 +8,18 @@ extends CharacterBody2D
 var direction : Vector2 = Vector2()
 
 func _physics_process(_delta):
+	velocity = velocity * .9 
 	if Input.is_action_just_pressed("burg_right"):
-		position.x += move_distance
+		velocity.x = speed
 	if Input.is_action_just_pressed("burg_left"):
-		position.x -= move_distance
+		velocity.x = -speed
 	if Input.is_action_just_pressed("burg_up"):
-		position.y -= move_distance
+		velocity.y = -speed
 	if Input.is_action_just_pressed("burg_down"):
-		position.y += move_distance
+		velocity.y = speed
 		
-	position.x = clamp(position.x, -1490, 3374)
-	position.y = clamp(position.y, -2258, 1326)
+		
+	position.x = clamp(position.x, -814, 2773)
+	position.y = clamp(position.y, -1582, 725)
 		
 	move_and_slide()
