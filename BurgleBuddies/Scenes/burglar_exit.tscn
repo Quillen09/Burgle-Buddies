@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c22gtbsigvc8i"]
+
+[ext_resource type="Script" path="res://Scripts/burglar_exit.gd" id="1_teouu"]
+[ext_resource type="PackedScene" uid="uid://46g7g0whxhye" path="res://Interaction_Components/interactable.tscn" id="3_fmaiy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_viqfj"]
+size = Vector2(26, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7o5tr"]
+size = Vector2(795.952, 52.2465)
+
+[node name="BurglarExit" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_teouu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 4.76837e-07)
+scale = Vector2(0.06, 0.058)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_viqfj")
+disabled = true
+
+[node name="Interactable" parent="." instance=ExtResource("3_fmaiy")]
+interact_name = "Escape 'M'"
+is_interactable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(1, 1)
+scale = Vector2(2.30294, 2.00014)
+shape = SubResource("RectangleShape2D_7o5tr")

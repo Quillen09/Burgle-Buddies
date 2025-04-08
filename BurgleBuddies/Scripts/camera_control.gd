@@ -3,6 +3,7 @@ extends Node
 @onready var resident_hud: CanvasLayer = $HBoxContainer/SubViewportContainer/SubViewport/ResidentHud
 @onready var burglar_hud: CanvasLayer = $HBoxContainer/SubViewportContainer2/SubViewport/BurglarHud
 @onready var safeCheck = open_Safe()
+@onready var escapeCheck = burglar_Escape()
 @onready var burgWeaponCheck = set_Weapon_Status()
 @onready var resWeaponCheck = set_Weapon_Status()
 
@@ -84,3 +85,20 @@ func weapon_Status():
 		resWeaponCheck = true
 	else:
 		resWeaponCheck = false
+		
+func burglar_Escape():
+	escape_Status()
+	
+	if escapeCheck == true:
+		get_tree().change_scene_to_file("res://Scenes/end.tscn")
+	else:
+		print("Gimme the goods")
+	
+		
+func escape_Status():
+	var burgItemName = burglar_hud.find_child("ItemName")
+	if burgItemName.text == "Money":
+		escapeCheck = true
+	else:
+		escapeCheck = false
+		

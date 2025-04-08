@@ -16,5 +16,6 @@ func _on_interact():
 	interactable.is_interactable = false
 	print("Key picked up")
 	$Sprite2D.visible = false
+	queue_free()
 	picked_up.emit()
 	

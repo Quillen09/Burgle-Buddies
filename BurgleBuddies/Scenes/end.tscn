@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://2qkqjjsi7hwd"]
+
+[ext_resource type="Script" path="res://Scripts/start.gd" id="1_ak0c3"]
+
+[node name="End" type="CanvasLayer"]
+script = ExtResource("1_ak0c3")
+
+[node name="finish" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -152.0
+offset_right = 59.0
+offset_bottom = -129.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 70
+text = "Game Over
+"
+
+[node name="start" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = 27.0
+offset_right = 69.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play Again"
+
+[node name="quit" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = 136.0
+offset_right = 75.0
+offset_bottom = 215.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+text = "Quit Game"
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

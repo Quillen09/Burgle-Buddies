@@ -8,15 +8,12 @@ signal picked_up
 
 func _ready() -> void:
 	interactable.interact = _on_interact
-	picked_up.connect(gameController.open_Safe)
+	picked_up.connect(gameController.burglar_Escape)
 
 func _on_interact():
-	
-	if gameController.safeCheck == true:
+	if gameController.escapeCheck == true:
 		interactable.is_interactable = false
-		print("Safe opened")
-		queue_free()
+		print("Escaped")
 	else:
-		print("Safe locked")
+		print("Where's the goods, homes?")
 	picked_up.emit()
-	
