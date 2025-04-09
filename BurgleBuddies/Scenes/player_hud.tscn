@@ -1,6 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4ifa2t4bdsi3"]
-
-[ext_resource type="Texture2D" uid="uid://bdm6rjgog5di3" path="res://icon.svg" id="1_ig3br"]
+[gd_scene load_steps=2 format=3 uid="uid://c4ifa2t4bdsi3"]
 
 [sub_resource type="GDScript" id="GDScript_1qg5y"]
 script/source = "extends Node
@@ -66,7 +64,6 @@ size_flags_vertical = 3
 [node name="Item" type="TextureRect" parent="HudControl/VBoxContainer/InventoryContainer/ItemContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("1_ig3br")
 expand_mode = 5
 
 [node name="ItemName" type="Label" parent="HudControl/VBoxContainer/InventoryContainer/ItemContainer"]

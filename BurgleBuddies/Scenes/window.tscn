@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://csumeynlxaajj"]
+
+[ext_resource type="Script" path="res://Scripts/window.gd" id="1_ft6yv"]
+[ext_resource type="Texture2D" uid="uid://bdm6rjgog5di3" path="res://icon.svg" id="2_jqpiw"]
+[ext_resource type="PackedScene" uid="uid://46g7g0whxhye" path="res://Interaction_Components/interactable.tscn" id="3_8ltsu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_viqfj"]
+size = Vector2(40.554, 39.5017)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7460"]
+size = Vector2(59.1271, 39.2511)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_durg0"]
+size = Vector2(129.736, 78.7206)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpk6x"]
+size = Vector2(7.37894, 10.1786)
+
+[node name="Window" type="RigidBody2D"]
+scale = Vector2(1.00896, 1.02602)
+gravity_scale = 0.0
+script = ExtResource("1_ft6yv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4.76837e-07)
+scale = Vector2(0.784707, 0.629799)
+texture = ExtResource("2_jqpiw")
+
+[node name="Direction" type="Label" parent="."]
+offset_left = -264.629
+offset_top = -41.9096
+offset_right = -237.629
+offset_bottom = -6.90958
+scale = Vector2(4.71303, 3.39459)
+text = "=>"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.99112, 0)
+scale = Vector2(2.44395, 2.02322)
+shape = SubResource("RectangleShape2D_viqfj")
+disabled = true
+
+[node name="Interactable" parent="." instance=ExtResource("3_8ltsu")]
+scale = Vector2(0.997189, 1.018)
+interact_name = "Go through 'M'"
+is_interactable = true
+
+[node name="Outer_window" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(-183.377, -1.42665e-07)
+scale = Vector2(2.30294, 2.00014)
+shape = SubResource("RectangleShape2D_m7460")
+
+[node name="Go_In" type="Marker2D" parent="Interactable"]
+position = Vector2(0.993913, -124.463)
+
+[node name="Interactable2" parent="." instance=ExtResource("3_8ltsu")]
+scale = Vector2(0.997189, 1.018)
+interact_name = "Go through 'M'"
+is_interactable = true
+
+[node name="Inner_window" type="CollisionShape2D" parent="Interactable2"]
+position = Vector2(-8.18457, -0.106468)
+shape = SubResource("RectangleShape2D_durg0")
+
+[node name="Go_Out" type="Marker2D" parent="Interactable2"]
+position = Vector2(-292.211, 0)
+
+[node name="Interactable3" parent="." instance=ExtResource("3_8ltsu")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable3"]
+position = Vector2(113.979, -1.49012e-08)
+rotation = -3.14159
+scale = Vector2(12.1004, 7.89972)
+shape = SubResource("RectangleShape2D_dpk6x")

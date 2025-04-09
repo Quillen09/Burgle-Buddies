@@ -6,6 +6,7 @@ extends Node
 @onready var escapeCheck = burglar_Escape()
 @onready var burgWeaponCheck = set_Weapon_Status()
 @onready var resWeaponCheck = set_Weapon_Status()
+@onready var itemCheck = false
 
 	
 @onready var players := {
@@ -45,10 +46,10 @@ func get_Weapon():
 
 func get_Item():
 	#update UI
-	var burgWeaponIcon = burglar_hud.find_child("Item")
-	var burgWeaponName = burglar_hud.find_child("ItemName")
-	burgWeaponIcon.texture = load("res://Assets/key.png")
-	burgWeaponName.text = "Key"
+	var burgItemIcon = burglar_hud.find_child("Item")
+	var burgItemName = burglar_hud.find_child("ItemName")
+	burgItemIcon.texture = load("res://Assets/key.png")
+	burgItemName.text = "Key"
 
 func open_Safe():
 	safe_Status()
@@ -102,3 +103,21 @@ func escape_Status():
 	else:
 		escapeCheck = false
 		
+func get_player(i):
+	if i == 2:
+		return players["2"].player
+	if i == 1:
+		return players["1"].player
+		
+func item_Status(itemName):
+	var resItemName = resident_hud.find_child("ItemName")
+	if resItemName.text == itemName:
+		itemCheck = true
+	else:
+		itemCheck = false
+		
+func get_Board():
+	var resItemIcon = resident_hud.find_child("Item")
+	var resItemName = resident_hud.find_child("ItemName")
+	resItemIcon.texture = load("res://icon.svg")
+	resItemName.text = "Board"

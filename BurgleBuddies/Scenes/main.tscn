@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://0rtqamf1k7au"]
+[gd_scene load_steps=22 format=4 uid="uid://0rtqamf1k7au"]
 
 [ext_resource type="Texture2D" uid="uid://dswgk0fopp5l3" path="res://Assets/Inside_A2_supplement.png" id="1_7fsum"]
 [ext_resource type="PackedScene" uid="uid://cnk51647w7i0d" path="res://Scenes/resident.tscn" id="2_dbokc"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://n7tj51wvpkrj" path="res://Scenes/key.tscn" id="10_4fgda"]
 [ext_resource type="PackedScene" uid="uid://cg3yv6answx6m" path="res://Scenes/safe.tscn" id="11_li1gl"]
 [ext_resource type="PackedScene" uid="uid://c22gtbsigvc8i" path="res://Scenes/burglar_exit.tscn" id="12_g2nkr"]
+[ext_resource type="PackedScene" uid="uid://csumeynlxaajj" path="res://Scenes/window.tscn" id="13_6cwwx"]
+[ext_resource type="PackedScene" uid="uid://dlhtmhcjm00m0" path="res://Scenes/board.tscn" id="14_6dopo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6vhfd"]
 texture = ExtResource("1_7fsum")
@@ -1390,7 +1392,7 @@ collision_mask = 1
 position = Vector2(75, -82)
 
 [node name="Burglar" parent="." instance=ExtResource("8_2um7u")]
-position = Vector2(1609, -889)
+position = Vector2(-753, -449)
 scale = Vector2(1, 1)
 collision_layer = 2
 collision_mask = 1
@@ -1403,3 +1405,20 @@ position = Vector2(503, -1087)
 
 [node name="BurglarExit" parent="." instance=ExtResource("12_g2nkr")]
 position = Vector2(977, 745)
+
+[node name="Window" parent="." instance=ExtResource("13_6cwwx")]
+position = Vector2(-336, -427)
+
+[node name="Go_In" parent="Window/Interactable" index="1"]
+position = Vector2(0.993958, 2.41995e-05)
+
+[node name="Inner_window" parent="Window/Interactable2" index="0"]
+position = Vector2(-13.6511, -0.106476)
+
+[node name="Go_Out" parent="Window/Interactable2" index="1"]
+position = Vector2(-188.844, -0.957382)
+
+[node name="Board" parent="." instance=ExtResource("14_6dopo")]
+position = Vector2(-341, 233)
+
+[editable path="Window"]

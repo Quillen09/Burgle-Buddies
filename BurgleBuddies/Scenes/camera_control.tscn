@@ -48,3 +48,6 @@ limit_right = 2848
 limit_bottom = 800
 
 [node name="BurglarHud" parent="HBoxContainer/SubViewportContainer2/SubViewport" instance=ExtResource("3_tiwvb")]
+
+[editable path="HBoxContainer/SubViewportContainer/SubViewport/Node2D"]
+[editable path="HBoxContainer/SubViewportContainer/SubViewport/Node2D/Window"]

@@ -79,7 +79,7 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_my24w"]
 radius = 82.0975
 
-[node name="Resident" type="CharacterBody2D"]
+[node name="Resident" type="CharacterBody2D" groups=["Resident"]]
 position = Vector2(0, -31)
 scale = Vector2(0.5, 0.5)
 collision_mask = 2
