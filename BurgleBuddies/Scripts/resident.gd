@@ -27,7 +27,8 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("res_down"):
 		velocity.y = speed
 		sprite.play("walkDown")
-		
+	if  velocity == Vector2.ZERO:
+		sprite.play("idle")
 	position.x = clamp(position.x, -814, 2773)
 	position.y = clamp(position.y, -1582, 725)
 		

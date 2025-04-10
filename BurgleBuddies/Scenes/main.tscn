@@ -1389,7 +1389,7 @@ collision_layer = 2
 collision_mask = 1
 
 [node name="Knife" parent="." instance=ExtResource("7_1y11f")]
-position = Vector2(75, -82)
+position = Vector2(962, -879)
 
 [node name="Burglar" parent="." instance=ExtResource("8_2um7u")]
 position = Vector2(-753, -449)

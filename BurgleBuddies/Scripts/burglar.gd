@@ -16,6 +16,8 @@ func _ready() -> void:
 
 func _physics_process(_delta):
 	velocity = velocity * .9 
+	if velocity.is_equal_approx(Vector2.ZERO):
+		sprite.play("idle")
 	if Input.is_action_just_pressed("burg_right"):
 		velocity.x = speed
 		sprite.play("walkRight")
@@ -28,6 +30,7 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("burg_down"):
 		velocity.y = speed
 		sprite.play("walkDown")
+		
 		
 		
 	position.x = clamp(position.x, -814, 2773)
