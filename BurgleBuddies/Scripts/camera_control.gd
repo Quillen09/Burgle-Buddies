@@ -119,5 +119,11 @@ func item_Status(itemName):
 func get_Board():
 	var resItemIcon = resident_hud.find_child("Item")
 	var resItemName = resident_hud.find_child("ItemName")
-	resItemIcon.texture = load("res://icon.svg")
+	resItemIcon.texture = load("res://Assets/board.png")
 	resItemName.text = "Board"
+	
+func remove_Board():
+	var resItemIcon = resident_hud.find_child("Item")
+	var resItemName = resident_hud.find_child("ItemName")
+	resItemIcon.texture = null
+	resItemName.text = "Item"

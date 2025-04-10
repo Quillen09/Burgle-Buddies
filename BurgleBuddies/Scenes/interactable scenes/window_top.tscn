@@ -1,0 +1,100 @@
+[gd_scene load_steps=8 format=3 uid="uid://dy0ul412kdcnt"]
+
+[ext_resource type="Script" path="res://Scripts/window.gd" id="1_7enld"]
+[ext_resource type="PackedScene" uid="uid://46g7g0whxhye" path="res://Interaction_Components/interactable.tscn" id="2_ryv27"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0y6mq"]
+font_size = 58
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_viqfj"]
+size = Vector2(40.554, 39.5017)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7460"]
+size = Vector2(59.1271, 39.2511)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_durg0"]
+size = Vector2(129.736, 78.7206)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpk6x"]
+size = Vector2(7.37894, 10.1786)
+
+[node name="Window" type="RigidBody2D"]
+scale = Vector2(1.00896, 1.02602)
+gravity_scale = 0.0
+script = ExtResource("1_7enld")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4.76837e-07)
+scale = Vector2(0.784707, 0.629799)
+
+[node name="Direction-Out" type="Label" parent="."]
+offset_left = 46.5826
+offset_top = 39.9602
+offset_right = 172.583
+offset_bottom = 153.96
+rotation = 1.5708
+text = "<="
+label_settings = SubResource("LabelSettings_0y6mq")
+horizontal_alignment = 1
+
+[node name="Barricade" type="Label" parent="."]
+offset_left = -55.5027
+offset_top = 156.917
+offset_right = 70.4972
+offset_bottom = 270.917
+text = "X"
+label_settings = SubResource("LabelSettings_0y6mq")
+horizontal_alignment = 1
+
+[node name="Direction-In" type="Label" parent="."]
+offset_left = 46.5826
+offset_top = -182.258
+offset_right = 172.583
+offset_bottom = -78.2576
+rotation = 1.5708
+text = "=>"
+label_settings = SubResource("LabelSettings_0y6mq")
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.96448, 46.7827)
+scale = Vector2(2.44395, 2.02322)
+shape = SubResource("RectangleShape2D_viqfj")
+disabled = true
+
+[node name="Interactable" parent="." instance=ExtResource("2_ryv27")]
+scale = Vector2(0.997189, 1.018)
+interact_name = "Go through 'M'"
+is_interactable = true
+
+[node name="Outer_window" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(4.96957, -95.7406)
+rotation = 1.5708
+scale = Vector2(2.30294, 2.00014)
+shape = SubResource("RectangleShape2D_m7460")
+
+[node name="Go_In" type="Marker2D" parent="Interactable"]
+position = Vector2(99.3914, 144.568)
+scale = Vector2(0.453856, 21.9997)
+
+[node name="Interactable2" parent="." instance=ExtResource("2_ryv27")]
+scale = Vector2(0.997189, 1.018)
+interact_name = "Go through 'M'"
+is_interactable = true
+
+[node name="Inner_window" type="CollisionShape2D" parent="Interactable2"]
+position = Vector2(3.97565, 71.8055)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_durg0")
+
+[node name="Go_Out" type="Marker2D" parent="Interactable2"]
+position = Vector2(-85.4766, -173.291)
+
+[node name="Interactable3" parent="." instance=ExtResource("2_ryv27")]
+interact_name = "Board Window 'E'"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable3"]
+position = Vector2(6.93784, 199.801)
+rotation = -3.14159
+scale = Vector2(12.1004, 7.89972)
+shape = SubResource("RectangleShape2D_dpk6x")

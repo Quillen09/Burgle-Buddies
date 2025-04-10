@@ -1,8 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://csumeynlxaajj"]
 
 [ext_resource type="Script" path="res://Scripts/window.gd" id="1_ft6yv"]
-[ext_resource type="Texture2D" uid="uid://bdm6rjgog5di3" path="res://icon.svg" id="2_jqpiw"]
 [ext_resource type="PackedScene" uid="uid://46g7g0whxhye" path="res://Interaction_Components/interactable.tscn" id="3_8ltsu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0y6mq"]
+font_size = 58
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_viqfj"]
 size = Vector2(40.554, 39.5017)
@@ -24,17 +26,33 @@ script = ExtResource("1_ft6yv")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4.76837e-07)
 scale = Vector2(0.784707, 0.629799)
-texture = ExtResource("2_jqpiw")
 
-[node name="Direction" type="Label" parent="."]
-offset_left = -264.629
-offset_top = -41.9096
-offset_right = -237.629
-offset_bottom = -6.90958
-scale = Vector2(4.71303, 3.39459)
-text = "=>"
+[node name="Direction-Out" type="Label" parent="."]
+offset_left = -69.3784
+offset_top = -40.9349
+offset_right = 56.6216
+offset_bottom = 73.0651
+text = "<="
+label_settings = SubResource("LabelSettings_0y6mq")
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
+
+[node name="Barricade" type="Label" parent="."]
+offset_left = 50.5471
+offset_top = -42.8842
+offset_right = 176.547
+offset_bottom = 71.1158
+text = "X"
+label_settings = SubResource("LabelSettings_0y6mq")
+horizontal_alignment = 1
+
+[node name="Direction-In" type="Label" parent="."]
+offset_left = -264.629
+offset_top = -44.8334
+offset_right = -138.629
+offset_bottom = 59.1666
+text = "=>"
+label_settings = SubResource("LabelSettings_0y6mq")
+horizontal_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.99112, 0)
@@ -68,6 +86,7 @@ shape = SubResource("RectangleShape2D_durg0")
 position = Vector2(-292.211, 0)
 
 [node name="Interactable3" parent="." instance=ExtResource("3_8ltsu")]
+interact_name = "Board Window 'E'"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable3"]
 position = Vector2(113.979, -1.49012e-08)

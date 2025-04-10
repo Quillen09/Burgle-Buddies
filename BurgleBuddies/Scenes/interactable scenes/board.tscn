@@ -1,11 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://dlhtmhcjm00m0"]
 
 [ext_resource type="Script" path="res://Scripts/board.gd" id="1_o7kup"]
-[ext_resource type="Texture2D" uid="uid://bdm6rjgog5di3" path="res://icon.svg" id="2_x86im"]
+[ext_resource type="Texture2D" uid="uid://booa4jrf06fpb" path="res://Assets/board.png" id="2_ekaj1"]
 [ext_resource type="PackedScene" uid="uid://46g7g0whxhye" path="res://Interaction_Components/interactable.tscn" id="3_vxtvj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_viqfj"]
-size = Vector2(26, 24)
+size = Vector2(69, 66)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_odrxt"]
 radius = 23.6394
@@ -15,18 +15,20 @@ gravity_scale = 0.0
 script = ExtResource("1_o7kup")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -1.43051e-06)
-scale = Vector2(0.203125, 0.1875)
-texture = ExtResource("2_x86im")
+position = Vector2(-0.5, 1)
+scale = Vector2(1.07813, 1.03125)
+texture = ExtResource("2_ekaj1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_viqfj")
 disabled = true
 
 [node name="Interactable" parent="." instance=ExtResource("3_vxtvj")]
-interact_name = "Pick up key 'M'"
+interact_name = "Pick up Board 'E'"
 is_interactable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(7.62939e-06, 0)
 scale = Vector2(2.30294, 2.00014)
 shape = SubResource("CircleShape2D_odrxt")

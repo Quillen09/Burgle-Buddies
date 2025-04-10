@@ -28,6 +28,7 @@ func _on_interact3():
 	gameController.item_Status("Board")
 	if gameController.itemCheck == true:
 		interactable.is_interactable = false
+		gameController.remove_Board()
 		print("window locked")
 		queue_free()
 	else:
