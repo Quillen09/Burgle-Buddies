@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var attacking = false
 @onready var animation = $AnimationPlayer
 @onready var gameController = get_node("/root/CameraControl")
+@onready var sprite = $Sprite2D
 
 signal has_Weapon
 
@@ -16,12 +17,16 @@ func _physics_process(_delta):
 	velocity = velocity * .9 
 	if Input.is_action_just_pressed("res_right"):
 		velocity.x = speed
+		sprite.play("walkRight")
 	if Input.is_action_just_pressed("res_left"):
 		velocity.x = -speed
+		sprite.play("walkLeft")
 	if Input.is_action_just_pressed("res_up"):
 		velocity.y = -speed
+		sprite.play("walkUp")
 	if Input.is_action_just_pressed("res_down"):
 		velocity.y = speed
+		sprite.play("walkDown")
 		
 	position.x = clamp(position.x, -814, 2773)
 	position.y = clamp(position.y, -1582, 725)
