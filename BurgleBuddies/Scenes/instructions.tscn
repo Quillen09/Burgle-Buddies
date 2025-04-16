@@ -1,0 +1,97 @@
+[gd_scene load_steps=5 format=3 uid="uid://hfwb72cxyvxo"]
+
+[ext_resource type="Script" path="res://Scenes/instructions.gd" id="1_s38ym"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mdr0t"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_8jv6d"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_crx1v"]
+font_size = 20
+
+[node name="Instructions" type="CanvasLayer"]
+script = ExtResource("1_s38ym")
+
+[node name="resident" type="Label" parent="."]
+offset_right = 502.0
+offset_bottom = 67.0
+theme_override_font_sizes/font_size = 70
+text = "How to play the Resident
+"
+label_settings = SubResource("LabelSettings_mdr0t")
+horizontal_alignment = 1
+
+[node name="burglar" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -486.0
+offset_bottom = 96.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 70
+text = "How to play the Burglar"
+label_settings = SubResource("LabelSettings_8jv6d")
+horizontal_alignment = 1
+
+[node name="ready" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -67.0
+offset_top = -81.0
+offset_right = 67.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Begin!"
+
+[node name="res_instructions" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 101.0
+offset_right = 507.0
+offset_bottom = 647.0
+text = "Your house is being invaded!
+
+Find some boards and quickly secure those windows.
+
+If the burglar gets inside, either avoid conflict or seek a weapon to fight back. 
+
+Fear not though! The cops are on their way and will deal with the intruder. 
+
+Hopefully they get here in time before the thief makes off with your valuables!
+
+Use 'WASD' keys to move
+Use 'E' to interact with objects
+Use 'Q' to attack"
+label_settings = SubResource("LabelSettings_crx1v")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="burg_instructions" type="Label" parent="."]
+offset_left = 645.0
+offset_top = 65.0
+offset_right = 1151.0
+offset_bottom = 653.0
+text = "Life can be tough, and sometimes you gotta do what you gotta do to make ends meet..
+
+Break into the house using the windows.
+
+Search for a key and then find the safe full of valuables and escape out the front. 
+
+You must act quickly though! The cops have been called and will be arriving shortly. 
+
+Watch out for the resident as well! You may be armed, but they can just as quickly arm themselves and fight back.
+
+Use the arrow keys to move
+Use 'M' to interact with objects
+Use '?' to attack"
+label_settings = SubResource("LabelSettings_crx1v")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="ready" to="." method="_on_ready_pressed"]

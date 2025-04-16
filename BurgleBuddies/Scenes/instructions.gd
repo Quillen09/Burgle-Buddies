@@ -10,9 +10,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/instructions.tscn")
 
-
-func _on_quit_pressed() -> void:
-	get_tree().quit()
+func _on_ready_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/camera_control.tscn")
