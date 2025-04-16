@@ -51,3 +51,7 @@ limit_bottom = 800
 
 [editable path="HBoxContainer/SubViewportContainer/SubViewport/Node2D"]
 [editable path="HBoxContainer/SubViewportContainer/SubViewport/Node2D/Window"]
+[editable path="HBoxContainer/SubViewportContainer/SubViewport/Node2D/Window4"]
+[editable path="HBoxContainer/SubViewportContainer/SubViewport/Node2D/Window2"]
+[editable path="HBoxContainer/SubViewportContainer/SubViewport/Node2D/Window5"]
+[editable path="HBoxContainer/SubViewportContainer/SubViewport/Node2D/Window3"]

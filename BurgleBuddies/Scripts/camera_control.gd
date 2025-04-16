@@ -127,3 +127,6 @@ func remove_Board():
 	var resItemName = resident_hud.find_child("ItemName")
 	resItemIcon.texture = null
 	resItemName.text = "Item"
+	
+
+	

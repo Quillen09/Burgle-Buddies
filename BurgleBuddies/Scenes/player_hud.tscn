@@ -1,21 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4ifa2t4bdsi3"]
+[gd_scene load_steps=3 format=3 uid="uid://c4ifa2t4bdsi3"]
 
 [sub_resource type="GDScript" id="GDScript_1qg5y"]
 script/source = "extends Node
 
+@onready var countdown: Label = $HudControl/Countdown
+@onready var timer: Timer = $HudControl/Timer
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _ready():
+	timer.start()
+	
+func time_left_until_cops():
+	var time_left = timer.time_left
+	var minute = floor(time_left / 60)
+	var second = int(time_left) % 60
+	return [minute, second]
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+func _process(_delta):
+	countdown.text = \"%02d:%02d\" % time_left_until_cops()
 
 func onWeaponPickUp():
 	print(\"hud display\")
+
+
+func _on_timer_timeout():
+	get_tree().change_scene_to_file(\"res://Scenes/end.tscn\")
 "
+
+[sub_resource type="LabelSettings" id="LabelSettings_gwwsn"]
+font_size = 28
 
 [node name="PlayerHud" type="CanvasLayer"]
 script = SubResource("GDScript_1qg5y")
@@ -88,3 +100,22 @@ stretch_mode = 5
 layout_mode = 2
 text = "Weapon"
 horizontal_alignment = 1
+
+[node name="Countdown" type="Label" parent="HudControl"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.5
+offset_right = 61.5
+offset_bottom = 66.0
+grow_horizontal = 2
+text = "00:00"
+label_settings = SubResource("LabelSettings_gwwsn")
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="HudControl"]
+wait_time = 300.0
+one_shot = true
+
+[connection signal="timeout" from="HudControl/Timer" to="." method="_on_timer_timeout"]
