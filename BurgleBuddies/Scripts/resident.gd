@@ -29,8 +29,8 @@ func _physics_process(_delta):
 		sprite.play("walkDown")
 	if  velocity.is_equal_approx(Vector2.ZERO):
 		sprite.play("idle")
-	position.x = clamp(position.x, -814, 2773)
-	position.y = clamp(position.y, -1582, 725)
+	position.x = clamp(position.x, -1000, 2900)
+	position.y = clamp(position.y, -1775, 950)
 		
 	move_and_slide()
 	

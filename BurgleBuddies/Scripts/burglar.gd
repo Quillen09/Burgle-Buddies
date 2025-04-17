@@ -33,8 +33,8 @@ func _physics_process(_delta):
 		
 		
 		
-	position.x = clamp(position.x, -814, 2773)
-	position.y = clamp(position.y, -1582, 725)
+	position.x = clamp(position.x, -1000, 2900)
+	position.y = clamp(position.y, -1775, 950)
 		
 	move_and_slide()
 	
