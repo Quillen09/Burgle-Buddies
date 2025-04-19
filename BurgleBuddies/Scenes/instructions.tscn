@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://hfwb72cxyvxo"]
 
-[ext_resource type="Script" path="res://Scenes/instructions.gd" id="1_s38ym"]
+[ext_resource type="Script" path="res://instructions.gd" id="1_s38ym"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mdr0t"]
 font_size = 30
@@ -87,7 +87,7 @@ You must act quickly though! The cops have been called and will be arriving shor
 Watch out for the resident as well! You may be armed, but they can just as quickly arm themselves and fight back.
 
 Use the arrow keys to move
-Use 'M' to interact with objects
+Use '.' to interact with objects
 Use '?' to attack"
 label_settings = SubResource("LabelSettings_crx1v")
 horizontal_alignment = 1

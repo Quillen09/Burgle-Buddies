@@ -11,7 +11,7 @@ signal interaction
 func _ready() -> void:
 	interactable.interact = _on_interact
 	interactable2.interact = _on_interact2
-	interactable3.interact = _on_interact3
+	interactable3.res_interact = _on_interact3
 	interaction.connect(gameController.get_player)
 	interaction.connect(gameController.item_Status)
 
@@ -27,7 +27,6 @@ func _on_interact3():
 	#var player1 = gameController.get_player(1)
 	gameController.item_Status("Board")
 	if gameController.itemCheck == true:
-		interactable.is_interactable = false
 		gameController.remove_Board()
 		print("window locked")
 		queue_free()

@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var animation = $AnimationPlayer
 @onready var gameController = get_node("/root/CameraControl")
 @onready var sprite = $Sprite2D
+@onready var interacting_component: Node2D = $InteractingComponent
 
 signal has_Weapon
 
@@ -13,6 +14,7 @@ var direction : Vector2 = Vector2()
 
 func _ready() -> void:
 	has_Weapon.connect(gameController.weapon_Status)
+	interacting_component.can_res_interact = false
 
 func _physics_process(_delta):
 	velocity = velocity * .9 

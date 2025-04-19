@@ -26,7 +26,7 @@ disabled = true
 
 [node name="Interactable" parent="." instance=ExtResource("3_vxtvj")]
 interact_name = "Pick up Board 'E'"
-is_interactable = true
+is_interactable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
 position = Vector2(7.62939e-06, 0)

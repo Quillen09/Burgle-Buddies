@@ -6,7 +6,7 @@ extends RigidBody2D
 signal picked_up
 
 func _ready() -> void:
-	interactable.interact = _on_interact
+	interactable.res_interact = _on_interact
 	#get game controller
 	var gameController = get_node("/root/CameraControl")
 		#subscribe game controller to this item signal

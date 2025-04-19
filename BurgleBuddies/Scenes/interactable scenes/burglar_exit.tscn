@@ -22,8 +22,8 @@ shape = SubResource("RectangleShape2D_viqfj")
 disabled = true
 
 [node name="Interactable" parent="." instance=ExtResource("3_fmaiy")]
-interact_name = "Escape 'M'"
-is_interactable = true
+interact_name = "Escape '.'"
+is_res_interactable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
 position = Vector2(1, 1)

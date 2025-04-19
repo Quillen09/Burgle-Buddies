@@ -1,8 +1,11 @@
 extends Node2D
 
 @onready var interact_label: Label = $InteractLabel
+@onready var res_interact_label: Label = $ResInteractLabel
 var current_interactions := []
+var current_res_interactions := []
 var can_interact := true
+var can_res_interact := true
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and can_interact:
@@ -13,15 +16,35 @@ func _input(event: InputEvent) -> void:
 			await current_interactions[0].interact.call()
 			
 			can_interact = true
-
+	if event.is_action_pressed("res_interact") and can_res_interact:
+		if current_res_interactions:
+			can_res_interact = false
+			res_interact_label.hide()
+			
+			await current_res_interactions[0].res_interact.call()
+			
+			can_res_interact = true
+			
 func _process(_delta: float) -> void:
 	if current_interactions and can_interact:
 		current_interactions.sort_custom(_sort_by_nearest)
 		if current_interactions[0].is_interactable:
 			interact_label.text = current_interactions[0].interact_name
 			interact_label.show()
+		else:
+			interact_label.hide()
 	else:
 		interact_label.hide()
+
+	if current_res_interactions and can_res_interact:
+		current_res_interactions.sort_custom(_sort_by_nearest)
+		if current_res_interactions[0].is_res_interactable:
+			res_interact_label.text = current_res_interactions[0].interact_name
+			res_interact_label.show()
+		else:
+			res_interact_label.hide()
+	else:
+		res_interact_label.hide()
 		
 
 func _sort_by_nearest(area1, area2):
@@ -31,12 +54,10 @@ func _sort_by_nearest(area1, area2):
 
 func _on_interact_range_area_entered(area: Area2D) -> void:
 	current_interactions.push_back(area)
+	current_res_interactions.push_back(area)
 
 
 func _on_interact_range_area_exited(area: Area2D) -> void:
 	current_interactions.erase(area)
-	
-
-
-	
+	current_res_interactions.erase(area)
 	

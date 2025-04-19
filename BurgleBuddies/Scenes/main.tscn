@@ -1698,6 +1698,9 @@ position = Vector2(-13.6511, -0.106476)
 [node name="Go_Out" parent="Window/Interactable2" index="1"]
 position = Vector2(-188.844, -0.957382)
 
+[node name="Interactable3" parent="Window" index="7"]
+is_interactable = true
+
 [node name="Window4" parent="." instance=ExtResource("13_6cwwx")]
 position = Vector2(2369, -414)
 
@@ -1734,6 +1737,9 @@ position = Vector2(-19.8783, -0.957413)
 [node name="Go_Out" parent="Window4/Interactable2" index="1"]
 position = Vector2(161.014, 1.91481)
 
+[node name="Interactable3" parent="Window4" index="7"]
+is_interactable = true
+
 [node name="CollisionShape2D" parent="Window4/Interactable3" index="0"]
 position = Vector2(-154.615, -0.97464)
 
@@ -1766,6 +1772,9 @@ position = Vector2(7.9513, 72.7629)
 [node name="Go_Out" parent="Window2/Interactable2" index="1"]
 position = Vector2(4.96959, -141.696)
 
+[node name="Interactable3" parent="Window2" index="7"]
+is_interactable = true
+
 [node name="CollisionShape2D" parent="Window2/Interactable3" index="0"]
 position = Vector2(7.92896, 198.827)
 
@@ -1794,6 +1803,9 @@ position = Vector2(7.9513, 89.9962)
 [node name="Go_Out" parent="Window5/Interactable2" index="1"]
 position = Vector2(4.96959, -141.696)
 
+[node name="Interactable3" parent="Window5" index="7"]
+is_interactable = true
+
 [node name="CollisionShape2D" parent="Window5/Interactable3" index="0"]
 position = Vector2(4.9556, -261.203)
 
@@ -1819,6 +1831,9 @@ position = Vector2(7.9513, 72.7629)
 
 [node name="Go_Out" parent="Window3/Interactable2" index="1"]
 position = Vector2(4.96959, -141.696)
+
+[node name="Interactable3" parent="Window3" index="7"]
+is_interactable = true
 
 [node name="CollisionShape2D" parent="Window3/Interactable3" index="0"]
 position = Vector2(7.92896, 198.827)

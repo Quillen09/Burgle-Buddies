@@ -24,8 +24,8 @@ shape = SubResource("RectangleShape2D_viqfj")
 disabled = true
 
 [node name="Interactable" parent="." instance=ExtResource("3_kmrp1")]
-interact_name = "Open Safe 'M'"
-is_interactable = true
+interact_name = "Open Safe '.'"
+is_res_interactable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
 scale = Vector2(2.30294, 2.00014)

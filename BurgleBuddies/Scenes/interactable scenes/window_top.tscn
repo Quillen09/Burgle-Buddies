@@ -64,8 +64,8 @@ disabled = true
 
 [node name="Interactable" parent="." instance=ExtResource("2_ryv27")]
 scale = Vector2(0.997189, 1.018)
-interact_name = "Go through 'M'"
-is_interactable = true
+interact_name = "Go through '.'"
+is_res_interactable = false
 
 [node name="Outer_window" type="CollisionShape2D" parent="Interactable"]
 position = Vector2(4.96957, -95.7406)
@@ -79,8 +79,8 @@ scale = Vector2(0.453856, 21.9997)
 
 [node name="Interactable2" parent="." instance=ExtResource("2_ryv27")]
 scale = Vector2(0.997189, 1.018)
-interact_name = "Go through 'M'"
-is_interactable = true
+interact_name = "Go through '.'"
+is_res_interactable = false
 
 [node name="Inner_window" type="CollisionShape2D" parent="Interactable2"]
 position = Vector2(3.97565, 71.8055)
@@ -92,6 +92,7 @@ position = Vector2(-85.4766, -173.291)
 
 [node name="Interactable3" parent="." instance=ExtResource("2_ryv27")]
 interact_name = "Board Window 'E'"
+is_interactable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable3"]
 position = Vector2(6.93784, 199.801)
