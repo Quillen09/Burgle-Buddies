@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cjokrsvrvybk8"]
+
+[ext_resource type="Shader" path="res://shadow.gdshader" id="1_q4k57"]
+
+[resource]
+shader = ExtResource("1_q4k57")
+shader_parameter/radius = Vector2(100, 50)
+shader_parameter/opacity = 0.5

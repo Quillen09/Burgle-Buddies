@@ -54,3 +54,4 @@ func attack():
 	
 		attacking = true
 		animation.play("attack")
+		

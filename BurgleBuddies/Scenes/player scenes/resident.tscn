@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://cnk51647w7i0d"]
+[gd_scene load_steps=50 format=3 uid="uid://cnk51647w7i0d"]
 
 [ext_resource type="Script" path="res://Scripts/resident.gd" id="1_fff5h"]
 [ext_resource type="Texture2D" uid="uid://cw00ligwa646i" path="res://Assets/walk_resident.png" id="2_dn6hi"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://dbqtm60ysginv" path="res://Slash 3/color5/frames/Slash3_color5_frame7.png" id="10_xudqd"]
 [ext_resource type="Texture2D" uid="uid://c0vqmdn5u21gi" path="res://Slash 3/color5/frames/Slash3_color5_frame8.png" id="11_0s4ot"]
 [ext_resource type="Texture2D" uid="uid://dx30ddrbn3ch" path="res://Slash 3/color5/frames/Slash3_color5_frame9.png" id="12_3m745"]
+[ext_resource type="Material" uid="uid://cjokrsvrvybk8" path="res://shadow.tres" id="14_jcoqj"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_7lu6u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ddct6"]
 atlas = ExtResource("2_u6cns")
@@ -311,6 +314,12 @@ collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_fff5h")
 speed = 500
+
+[node name="TextureRect" type="Polygon2D" parent="."]
+material = ExtResource("14_jcoqj")
+position = Vector2(-224, 80)
+texture = SubResource("CanvasTexture_7lu6u")
+polygon = PackedVector2Array(224, -28, 234, -28, 246, -26, 252, -22, 254, -16, 250, -10, 244, -8, 234, -6, 224, -6, 212, -6, 200, -8, 194, -10, 192, -18, 194, -22, 202, -26, 212, -28)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
