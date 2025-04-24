@@ -1638,6 +1638,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_xoorx")
 
 [node name="Node2D" type="Node2D"]
+y_sort_enabled = true
 
 [node name="TileMap" type="TileMapLayer" parent="."]
 position = Vector2(32, 32)
@@ -1648,36 +1649,44 @@ use_kinematic_bodies = true
 metadata/_edit_lock_ = true
 
 [node name="furnitureTileMap" type="TileMapLayer" parent="."]
+z_index = 1
 texture_filter = 1
 scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAAEAPz/AAAOAAIAAAAEAP3/AAAOAAMAAAAEAP7/AAAOAAQAAAAEAP//AAAOAAUAAAAFAPz/AAAPAAIAAAAFAP3/AAAPAAMAAAAFAP7/AAAPAAQAAAAFAP//AAAPAAUAAAD6//v/AAAKAAgAAAD6//z/AAAKAAkAAAD6//3/AAAKAAoAAAD7//v/AAALAAgAAAD7//z/AAALAAkAAAD7//3/AAALAAoAAAADAPz/AAAJAAIAAAADAP3/AAAJAAMAAAD6//H/AAADAAgAAAD6//L/AAADAAkAAAD6//P/AAADAAoAAAD7//H/AAAEAAgAAAD7//L/AAAEAAkAAAD7//P/AAAEAAoAAAD8/+//AAAAAAgAAAD8//D/AAAAAAkAAAD9/+//AAABAAgAAAD9//D/AAABAAkAAAD+/+//AAACAAgAAAD+//D/AAACAAkAAAD8//H/AAAFAAUAAAD8//L/AAAFAAYAAAD8//P/AAAFAAcAAAD9//H/AAAGAAUAAAD9//L/AAAGAAYAAAD9//P/AAAGAAcAAAD+//H/AAAHAAUAAAD+//L/AAAHAAYAAAD+//P/AAAHAAcAAAD7/+//AAAOAAYAAAD7//D/AAAOAAcAAAAFAO7/AAAKAAgAAAAFAO//AAAKAAkAAAAFAPD/AAAKAAoAAAAGAO7/AAALAAgAAAAGAO//AAALAAkAAAAGAPD/AAALAAoAAAAbAO7/AAALAAIAAAAbAO//AAALAAMAAAAbAPD/AAALAAQAAAAbAPH/AAALAAUAAAAcAO7/AAAMAAIAAAAcAO//AAAMAAMAAAAcAPD/AAAMAAQAAAAcAPH/AAAMAAUAAAAdAO7/AAANAAIAAAAdAO//AAANAAMAAAAdAPD/AAANAAQAAAAdAPH/AAANAAUAAAAaAO7/AAAJAAIAAAAaAO//AAAJAAMAAAAZAPD/AAAFAAMAAAAZAPH/AAAFAAQAAAAaAPD/AAAGAAMAAAAaAPH/AAAGAAQAAAD///H/AAAOAAAAAAD///L/AAAOAAEAAAAAAPH/AAAPAAAAAAAAAPL/AAAPAAEAAAAeAAAAAAAMAAgAAAAeAAEAAAAMAAkAAAAeAAIAAAAMAAoAAAAfAAAAAAANAAgAAAAfAAEAAAANAAkAAAAfAAIAAAANAAoAAAAgAAAAAAAOAAgAAAAgAAEAAAAOAAkAAAAgAAIAAAAOAAoAAAA=")
 tile_set = SubResource("TileSet_xvtux")
 
 [node name="Resident" parent="." instance=ExtResource("2_dbokc")]
+z_index = 10
 position = Vector2(-340, 188)
 scale = Vector2(1, 1)
 collision_layer = 2
 collision_mask = 1
 
-[node name="Knife" parent="." instance=ExtResource("7_1y11f")]
-position = Vector2(1333, -660)
-
 [node name="Burglar" parent="." instance=ExtResource("8_2um7u")]
+z_index = 10
 position = Vector2(2638, -1585)
 scale = Vector2(1, 1)
 collision_layer = 2
 collision_mask = 1
 
+[node name="Knife" parent="." instance=ExtResource("7_1y11f")]
+z_index = 5
+position = Vector2(1333, -660)
+
 [node name="Key" parent="." instance=ExtResource("10_4fgda")]
+z_index = 5
 position = Vector2(2013, 43)
 
 [node name="Safe" parent="." instance=ExtResource("11_li1gl")]
+z_index = 5
 position = Vector2(503, -1087)
 
 [node name="BurglarExit" parent="." instance=ExtResource("12_g2nkr")]
+z_index = 5
 position = Vector2(962, 931)
 
 [node name="Window" parent="." instance=ExtResource("13_6cwwx")]
+z_index = 5
 position = Vector2(-336, -427)
 
 [node name="Direction-Out" parent="Window" index="1"]
@@ -1702,6 +1711,7 @@ position = Vector2(-188.844, -0.957382)
 is_interactable = true
 
 [node name="Window4" parent="." instance=ExtResource("13_6cwwx")]
+z_index = 5
 position = Vector2(2369, -414)
 
 [node name="Direction-Out" parent="Window4" index="1"]
@@ -1744,12 +1754,15 @@ is_interactable = true
 position = Vector2(-154.615, -0.97464)
 
 [node name="Board" parent="." instance=ExtResource("14_6dopo")]
+z_index = 5
 position = Vector2(567, -225)
 
 [node name="Board2" parent="." instance=ExtResource("14_6dopo")]
+z_index = 5
 position = Vector2(2254, -176)
 
 [node name="Window2" parent="." instance=ExtResource("15_ycic3")]
+z_index = 5
 position = Vector2(882, -1177)
 
 [node name="Barricade" parent="Window2" index="2"]
@@ -1779,6 +1792,7 @@ is_interactable = true
 position = Vector2(7.92896, 198.827)
 
 [node name="Window5" parent="." instance=ExtResource("15_ycic3")]
+z_index = 5
 position = Vector2(310, 366)
 
 [node name="Barricade" parent="Window5" index="2"]
@@ -1810,6 +1824,7 @@ is_interactable = true
 position = Vector2(4.9556, -261.203)
 
 [node name="Window3" parent="." instance=ExtResource("15_ycic3")]
+z_index = 5
 position = Vector2(2094, -1174)
 
 [node name="Barricade" parent="Window3" index="2"]
