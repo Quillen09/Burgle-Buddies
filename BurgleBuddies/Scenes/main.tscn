@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://csumeynlxaajj" path="res://Scenes/interactable scenes/window_left.tscn" id="13_6cwwx"]
 [ext_resource type="PackedScene" uid="uid://dlhtmhcjm00m0" path="res://Scenes/interactable scenes/board.tscn" id="14_6dopo"]
 [ext_resource type="PackedScene" uid="uid://dy0ul412kdcnt" path="res://Scenes/interactable scenes/window_top.tscn" id="15_ycic3"]
-[ext_resource type="AudioStream" uid="uid://b6lw4b03pamyu" path="res://Dragon and Toast.mp3" id="16_4bu18"]
+[ext_resource type="AudioStream" uid="uid://biaoufcyux0vj" path="res://sneaking-in-the-warehouse-brolefilmer-13689.mp3" id="17_5mve8"]
 [ext_resource type="Texture2D" uid="uid://58bmbxv3kx25" path="res://interiors_demo.png" id="17_7fi5i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6vhfd"]
@@ -1854,7 +1854,7 @@ is_interactable = true
 position = Vector2(7.92896, 198.827)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("16_4bu18")
+stream = ExtResource("17_5mve8")
 autoplay = true
 
 [editable path="Window"]
